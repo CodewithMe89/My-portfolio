@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <nav>
+      <button class="logo" aria-label="Home">My<span>Portfolio</span></button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <ul class="nav-links" id="nav-links" role="menu">
+        <li role="none"><a role="menuitem" href="#home">Home</a></li>
+        <li role="none"><a role="menuitem" href="#projects">Projects</a></li>
+        <li role="none"><a role="menuitem" href="#about">About</a></li>
+        <li role="none"><a role="menuitem" class="btn" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="home">
+      <div class="home-inner">
+        <h1>I'm a web developer who loves creating clean and modern websites.</h1>
+        <p>I enjoy building projects that solve real problems and match people’s needs.</p>
+        <a class="btn" href="#projects">View My Work</a>
+      </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+      <h2>Projects</h2>
+      <div class="projects-container">
+        <article class="project-card">
+          <img src="Images/emergency-heathcare.png" alt="Emergency Healthcare app image" />
+          <div class="project-info">
+            <h3>Emergency & Mechanic Finder</h3>
+            <p>A web app that helps users get instant emergency help. Built with HTML, CSS, JavaScript, and Firebase.</p>
+            <a class="project-btn" href="https://keshav9899.github.io/Emergency-Healthcare_Web/" target="_blank" rel="noopener">View Project</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Coming soon project" />
+          <div class="project-info">
+            <h3>Coming Soon</h3>
+            <p>Another web project focused on solving real-life problems through clean and functional design.</p>
+            <a class="project-btn" href="#projects">Coming Soon</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>I’m a web developer learning through hands-on experience. My goal is to become an expert in web development by learning from every project I create.</p>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2>Contact</h2>
+      <p>If you'd like to work together or just say hi, feel free to reach out!</p>
+      <div class="contact-buttons">
+        <a class="contact-btn" href="mailto:keshav0307837@gmail.com">Email</a>
+        <!-- <a class="contact-btn" href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a> -->
+        <a class="contact-btn" href="https://github.com/Keshav9899" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Keshav
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const links = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+      const active = links.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', active ? 'true' : 'false');
+    });
+
+    links.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => {
+        links.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      })
+    );
+  </script>
+</body>
+</html>
